@@ -89,7 +89,7 @@ impl MultiPattern {
         // TODO: wheight columns?
         let mut score = 0;
         for ((pattern, _), haystack) in self.cols.iter().zip(haystack) {
-            score += pattern.score(haystack.slice(..), matcher)?
+            score += pattern.score(haystack.slice(..), matcher).unwrap_or(0);
         }
         Some(score)
     }
