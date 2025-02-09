@@ -91,7 +91,11 @@ impl MultiPattern {
         for ((pattern, _), haystack) in self.cols.iter().zip(haystack) {
             score += pattern.score(haystack.slice(..), matcher).unwrap_or(0);
         }
-        Some(score)
+        if score == 0 {
+            None
+        } else {
+            Some(score)
+        }
     }
 
     pub fn is_empty(&self) -> bool {

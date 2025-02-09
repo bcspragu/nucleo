@@ -1,3 +1,7 @@
+This fork just changes the behavior of multiple columns to logical OR instead of AND, which is useful for cases where you want to match across any of multiple attributes of an entity.
+
+---
+
 # Nucleo
 
 
